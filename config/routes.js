@@ -35,6 +35,9 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+  'GET /register': {
+    view: 'auth/registration'
+  },
 
   'POST /register': 'UserController.register'
 

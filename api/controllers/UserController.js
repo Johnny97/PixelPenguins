@@ -32,9 +32,7 @@ module.exports = {
 
       // Save the "fd" and the url where the avatar for a user can be accessed
       User.create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        pinCode: req.body.pinCode,
+        ...req.body,
         barCode: barCode,
 
         // Grab the first file and use it's `fd` (file descriptor)

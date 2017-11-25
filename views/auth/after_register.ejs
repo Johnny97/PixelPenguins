@@ -3,7 +3,6 @@
   <h3>Thanks for Registering</h3>
   <p>Please print this barcode</p>
   <svg id="barcode"></svg>
-  <img src="<%= user.barCode %>" alt="Barcode">
 </div>
 
 <div>
@@ -11,5 +10,5 @@
 </div>
 
 <script>
-  JsBarcode("#barcode", "Hi!");
+  JsBarcode("#barcode", "<%= user.barCode %>");
 </script>
