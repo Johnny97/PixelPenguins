@@ -10,7 +10,7 @@
 module.exports = {
 	profile: function (req, res){
 
-		User.findOne(1).exec((err, user) => {
+		User.findOne(req.session.user.id).exec((err, user) => {
 			if (err || !user) {
 				return res.badRequest();
 			}

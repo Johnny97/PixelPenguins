@@ -50,7 +50,9 @@ module.exports.routes = {
   'POST /register': 'UserController.register',
   'POST /preAuth':'UserController.preAuth',
 
-  'POST /assignSession':'UserController.assignSession'
+  'POST /assignSession':'UserController.assignSession',
+  'GET /profile': 'ProfileController.profile',
+  'GET /user/avatar/:id': 'UserController.avatar'
 
 
   /***************************************************************************

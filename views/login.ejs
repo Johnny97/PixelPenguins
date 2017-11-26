@@ -23,8 +23,10 @@
 	Quagga.onDetected(function(data) {
       var code = data.codeResult.code;
       var data = {
-        code: code
+        barcode: code
       };
-    $.post("/fetchUser", data)
+    $.post("/preAuth", data, function(data) {
+      window.location = '/pin';
+    })
 	});
 </script>

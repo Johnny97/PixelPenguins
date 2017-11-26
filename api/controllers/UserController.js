@@ -24,16 +24,13 @@ module.exports = {
   assignSession: function(req, res) {
     // console.log(req.body.pin);
     // console.log(req.session.preAuthUser);
-    if(req.body.pin==req.session.preAuthUser.pin) {
+    if(req.body.pin == req.session.preAuthUser.pin) {
       req.session.user = req.session.preAuthUser;
-
-
       delete req.session.preAuthUser;
       return res.redirect('/profile');
     }
 
     return res.redirect('/pin');
-
   },
   
   register: function (req, res) {
@@ -71,6 +68,29 @@ module.exports = {
 
         res.view('auth/after_register', { user: user });
       });
+    });
+  },
+
+  avatar: function(req, res) {
+    User.findOne(req.param('id')).exec(function (err, user){
+      if (err) return res.negotiate(err);
+      if (!user) return res.notFound();
+
+      // User has no avatar image uploaded.
+      // (should have never have hit this endpoint and used the default image)
+      if (!user.avatarFd) {
+        return res.notFound();
+      }
+
+      var SkipperDisk = require('skipper-disk');
+      var fileAdapter = SkipperDisk(/* optional opts */);
+
+      // Stream the file down
+      fileAdapter.read(user.avatarFd)
+      .on('error', function (err){
+        return res.serverError(err);
+      })
+      .pipe(res);
     });
   }
 
