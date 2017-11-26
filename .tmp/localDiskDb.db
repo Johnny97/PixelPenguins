@@ -1,0 +1,41 @@
+{
+  "data": {
+    "user": [
+      {
+        "firstName": "ayah",
+        "lastName": "a",
+        "age": "21",
+        "phoneNumber": "65465",
+        "gender": "female",
+        "nationality": "palestine",
+        "pin": "54675",
+        "barCode": "REFUGEE615502",
+        "avatarFd": "C:\\Users\\User\\Documents\\blockhacks\\PixelPenguins\\.tmp\\uploads\\b24ff558-b292-4eed-a60e-cb96fe309c02.gif",
+        "createdAt": "2017-11-26T01:52:11.667Z",
+        "updatedAt": "2017-11-26T01:52:11.667Z",
+        "id": 1
+      }
+    ]
+  },
+  "schema": {
+    "user": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "user": {
+      "id": 1
+    }
+  }
+}

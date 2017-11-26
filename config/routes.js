@@ -43,6 +43,10 @@ module.exports.routes = {
     view: 'login'
   },
 
+    'GET /pin': {
+    view: 'pin'
+  },
+
   'POST /register': 'UserController.register'
 
   /***************************************************************************
