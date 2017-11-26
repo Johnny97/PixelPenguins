@@ -21,6 +21,10 @@
   });
 
 	Quagga.onDetected(function(data) {
-		console.log(data.codeResult.code);
+      var code = data.codeResult.code;
+      var data = {
+        code: code
+      };
+    $.post("/fetchUser", data)
 	});
 </script>
