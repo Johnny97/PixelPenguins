@@ -6,7 +6,26 @@
  */
 
 module.exports = {
+  preAuth: function (req, res) {
+    let code = req.body.barcode;
+    User.findOne({
+      barCode: code
+    }).exec(function(err, user){
+      if (err || !user) {
+        return res.badRequest();
+      }
 
+      req.session.preAuthUser = user;
+
+      res.ok(user);
+    });
+  },
+
+  assignSession: function(req, res) {
+    console.log(req.body.pin);
+    res.send('hello')
+  },
+  
   register: function (req, res) {
 
     req.validate({

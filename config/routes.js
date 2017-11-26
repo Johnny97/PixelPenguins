@@ -43,7 +43,10 @@ module.exports.routes = {
     view: 'login'
   },
 
-  'POST /register': 'UserController.register'
+  'POST /register': 'UserController.register',
+  'POST /preAuth':'UserController.preAuth',
+
+  'GET /assignSession':'UserController.assignSession'//newly saved
 
   /***************************************************************************
   *                                                                          *
