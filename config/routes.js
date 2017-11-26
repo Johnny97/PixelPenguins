@@ -50,7 +50,7 @@ module.exports.routes = {
   'POST /register': 'UserController.register',
   'POST /preAuth':'UserController.preAuth',
 
-  'GET /assignSession':'UserController.assignSession'//newly saved
+  'POST /assignSession':'UserController.assignSession'
 
 
   /***************************************************************************

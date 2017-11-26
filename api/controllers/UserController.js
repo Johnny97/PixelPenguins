@@ -22,8 +22,18 @@ module.exports = {
   },
 
   assignSession: function(req, res) {
-    console.log(req.body.pin);
-    res.send('hello')
+    // console.log(req.body.pin);
+    // console.log(req.session.preAuthUser);
+    if(req.body.pin==req.session.preAuthUser.pin) {
+      req.session.user = req.session.preAuthUser;
+
+
+      delete req.session.preAuthUser;
+      return res.redirect('/profile');
+    }
+
+    return res.redirect('/pin');
+
   },
   
   register: function (req, res) {
