@@ -14,7 +14,14 @@ module.exports = {
 			if (err || !user) {
 				return res.badRequest();
 			}
-			res.view('profile', {user: user})
+
+			Picture.find({
+        user: req.session.user.id
+      }).exec((err, pictures) => {
+			  if (err) return res.badRequest();
+
+        res.view('profile', {user: user, pictures: pictures});
+      })
 		})
 	}
 };

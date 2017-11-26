@@ -50,7 +50,10 @@ module.exports.routes = {
 
   'POST /assignSession':'UserController.assignSession',
   'GET /profile': 'ProfileController.profile',
-  'GET /user/avatar/:id': 'UserController.avatar'
+  'GET /user/avatar/:id': 'UserController.avatar',
+
+  'GET /picture/:id': 'PictureController.retrieve',
+  'POST /picture': 'PictureController.upload'
 
 
   /***************************************************************************

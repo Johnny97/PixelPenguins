@@ -69,7 +69,12 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .homepage-title {
+  display: flex;
+  align-items: baseline;
   font-size: 4rem;
+  > img {
+    max-width: 10rem;
+  }
 }
 
 #scan {
@@ -125,6 +130,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
+.documents,
 .profile-list {
   list-style-type: none;
   padding-left: 0;
@@ -160,4 +166,12 @@ h1, h2, h3, h4, h5, h6 {
 #loader > svg {
   margin: 0 auto;
   width: 5rem;
+}
+
+.documents > li {
+  margin-bottom: 1rem;
+}
+
+.documents > li > img{
+  max-width: 100%;
 }
