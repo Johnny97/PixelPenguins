@@ -1,32 +1,46 @@
 
-<div id="scan"></div>
+<div class="login">
+  <div class="login-container">
+    <div class="text-center">
+      <h1 class="login-header">Login :)</h1>
+      <p class="lead login-lead">Scan your barcode here to identify yourself.</p>
+    </div>
+    <div id="scan">
+      <div id="scan-load">
 
-<script type="text/javascript">
-	Quagga.init({
-    inputStream : {
-      name : "Live",
-      type : "LiveStream",
-      target: document.querySelector('#scan')    // Or '#yourElement' (optional)
-    },
-    decoder : {
-      readers : ["code_128_reader"]
-    }
-  }, function(err) {
+      </div>
+    </div>
+    <small class="login-register"><a href="/register">Don't have an account? Register Now :)</a></small>
+  </div>
+
+  <script type="text/javascript">
+    Quagga.init({
+      inputStream : {
+        name : "Live",
+        type : "LiveStream",
+        target: document.querySelector('#scan')    // Or '#yourElement' (optional)
+      },
+      decoder : {
+        readers : ["code_128_reader"]
+      }
+    }, function(err) {
       if (err) {
-          console.log(err);
-          return
+        console.log(err);
+        return
       }
       console.log("Initialization finished. Ready to start");
       Quagga.start();
-  });
+    });
 
-	Quagga.onDetected(function(data) {
+    Quagga.onDetected(function(data) {
       var code = data.codeResult.code;
       var data = {
         barcode: code
       };
-    $.post("/preAuth", data, function(data) {
-      window.location = '/pin';
-    })
-	});
-</script>
+      $.post("/preAuth", data, function(data) {
+        window.location = '/pin';
+      })
+    });
+  </script>
+
+</div>

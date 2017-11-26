@@ -1,23 +1,75 @@
+<button class="btn btn-logout">
+  <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3MS4yIDQ3MS4yIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzEuMiA0NzEuMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yMjcuNjE5LDQ0NC4yaC0xMjIuOWMtMzMuNCwwLTYwLjUtMjcuMi02MC41LTYwLjVWODcuNWMwLTMzLjQsMjcuMi02MC41LDYwLjUtNjAuNWgxMjQuOWM3LjUsMCwxMy41LTYsMTMuNS0xMy41ICAgIHMtNi0xMy41LTEzLjUtMTMuNWgtMTI0LjljLTQ4LjMsMC04Ny41LDM5LjMtODcuNSw4Ny41djI5Ni4yYzAsNDguMywzOS4zLDg3LjUsODcuNSw4Ny41aDEyMi45YzcuNSwwLDEzLjUtNiwxMy41LTEzLjUgICAgUzIzNS4wMTksNDQ0LjIsMjI3LjYxOSw0NDQuMnoiIGZpbGw9IiMwMDAwMDAiLz4KCQk8cGF0aCBkPSJNNDUwLjAxOSwyMjYuMWwtODUuOC04NS44Yy01LjMtNS4zLTEzLjgtNS4zLTE5LjEsMGMtNS4zLDUuMy01LjMsMTMuOCwwLDE5LjFsNjIuOCw2Mi44aC0yNzMuOWMtNy41LDAtMTMuNSw2LTEzLjUsMTMuNSAgICBzNiwxMy41LDEzLjUsMTMuNWgyNzMuOWwtNjIuOCw2Mi44Yy01LjMsNS4zLTUuMywxMy44LDAsMTkuMWMyLjYsMi42LDYuMSw0LDkuNSw0czYuOS0xLjMsOS41LTRsODUuOC04NS44ICAgIEM0NTUuMzE5LDIzOS45LDQ1NS4zMTksMjMxLjMsNDUwLjAxOSwyMjYuMXoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+</button>
 
-Hello, <%= user.firstName %>, <%= user.lastName %>
-<%= user.age %>
-<%= user.phoneNumber %>
-<%= user.gender %>
-<%= user.nationality %>
-<%= user.pin %>
-<%= user.barCode %>
-<%= user.id %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="text-center mt-5">
+        <div>
+          <img class="avatar" src="/user/avatar/<%= user.id %>">
+        </div>
+        <h1>
+          Hello, <%= user.firstName %>, <%= user.lastName %>
+        </h1>
+        <ul class="profile-list">
+          <li>
+            Age: <span>	<%= user.age %></span>
+          </li>
+          <li>
+            Gender: <span><%= user.gender %></span>
+          </li>
+          <li>
+            Phone Number: <span><%= user.phoneNumber %></span>
+          </li>
+          <li>
+            Nationality: <span><%= user.nationality %></span>
+          </li>
+        </ul>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+<div id="loader" style="display: none;">
+  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling">
+    <circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#3be8b0" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(48 50 50)">
+      <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+    </circle>
+  </svg>
+</div>
 
+<button class="btn btn-primary btn-upload">
+  <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ni4zIDQ4Ni4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0ODYuMyA0ODYuMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zOTUuNSwxMzUuOGMtNS4yLTMwLjktMjAuNS01OS4xLTQzLjktODAuNWMtMjYtMjMuOC01OS44LTM2LjktOTUtMzYuOWMtMjcuMiwwLTUzLjcsNy44LTc2LjQsMjIuNSAgICBjLTE4LjksMTIuMi0zNC42LDI4LjctNDUuNyw0OC4xYy00LjgtMC45LTkuOC0xLjQtMTQuOC0xLjRjLTQyLjUsMC03Ny4xLDM0LjYtNzcuMSw3Ny4xYzAsNS41LDAuNiwxMC44LDEuNiwxNiAgICBDMTYuNywyMDAuNywwLDIzMi45LDAsMjY3LjJjMCwyNy43LDEwLjMsNTQuNiwyOS4xLDc1LjljMTkuMywyMS44LDQ0LjgsMzQuNyw3MiwzNi4yYzAuMywwLDAuNSwwLDAuOCwwaDg2ICAgIGM3LjUsMCwxMy41LTYsMTMuNS0xMy41cy02LTEzLjUtMTMuNS0xMy41aC04NS42QzYxLjQsMzQ5LjgsMjcsMzEwLjksMjcsMjY3LjFjMC0yOC4zLDE1LjItNTQuNywzOS43LTY5ICAgIGM1LjctMy4zLDguMS0xMC4yLDUuOS0xNi40Yy0yLTUuNC0zLTExLjEtMy0xNy4yYzAtMjcuNiwyMi41LTUwLjEsNTAuMS01MC4xYzUuOSwwLDExLjcsMSwxNy4xLDNjNi42LDIuNCwxMy45LTAuNiwxNi45LTYuOSAgICBjMTguNy0zOS43LDU5LjEtNjUuMywxMDMtNjUuM2M1OSwwLDEwNy43LDQ0LjIsMTEzLjMsMTAyLjhjMC42LDYuMSw1LjIsMTEsMTEuMiwxMmM0NC41LDcuNiw3OC4xLDQ4LjcsNzguMSw5NS42ICAgIGMwLDQ5LjctMzkuMSw5Mi45LTg3LjMsOTYuNmgtNzMuN2MtNy41LDAtMTMuNSw2LTEzLjUsMTMuNXM2LDEzLjUsMTMuNSwxMy41aDc0LjJjMC4zLDAsMC42LDAsMSwwYzMwLjUtMi4yLDU5LTE2LjIsODAuMi0zOS42ICAgIGMyMS4xLTIzLjIsMzIuNi01MywzMi42LTg0QzQ4Ni4yLDE5OS41LDQ0Ny45LDE0OS42LDM5NS41LDEzNS44eiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik0zMjQuMiwyODBjNS4zLTUuMyw1LjMtMTMuOCwwLTE5LjFsLTcxLjUtNzEuNWMtMi41LTIuNS02LTQtOS41LTRzLTcsMS40LTkuNSw0bC03MS41LDcxLjVjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xICAgIGMyLjYsMi42LDYuMSw0LDkuNSw0czYuOS0xLjMsOS41LTRsNDguNS00OC41djIyMi45YzAsNy41LDYsMTMuNSwxMy41LDEzLjVzMTMuNS02LDEzLjUtMTMuNVYyMzEuNWw0OC41LDQ4LjUgICAgQzMxMC40LDI4NS4zLDMxOC45LDI4NS4zLDMyNC4yLDI4MHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+</button>
+<input type="file" style="display: none;" id="file-upload">
 
-<img src="/user/avatar/<%= user.id %>">
-<form  id ="forms" action="/documents" method="post"  enctype="multipart/form-data">
-	<div><input type="file" name="Document" id="updateDom" value="Add Documents"></div>
-</form>
+<script>
 
-
-
-
-
-
-
-
+  $(function () {
+    $('.btn-logout').click(function () {
+      $.get('/auth/logout', function () {
+        window.location = '/';
+      });
+    });
+    $('.btn-upload').click(function () {
+      $('#file-upload').trigger('click');
+    });
+    $('#file-upload').change(function ($event) {
+      var files = $event.target.files;
+      $('#loader').show();
+      $.ajax({
+        type: "POST",
+        url: "/documents",
+        enctype: 'multipart/form-data',
+        data: {
+          file: files
+        },
+        success: function () {
+          $('#loader').hide();
+          alert("Data Uploaded: ");
+        }
+      });
+    });
+  });
+</script>

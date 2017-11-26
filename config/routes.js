@@ -43,9 +43,7 @@ module.exports.routes = {
     view: 'login'
   },
 
-    'GET /pin': {
-    view: 'pin'
-  },
+  'GET /pin': 'AuthController.pin',
 
   'POST /register': 'UserController.register',
   'POST /preAuth':'UserController.preAuth',
