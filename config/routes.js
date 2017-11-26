@@ -47,7 +47,11 @@ module.exports.routes = {
     view: 'pin'
   },
 
-  'POST /register': 'UserController.register'
+  'POST /register': 'UserController.register',
+  'POST /preAuth':'UserController.preAuth',
+
+  'GET /assignSession':'UserController.assignSession'//newly saved
+
 
   /***************************************************************************
   *                                                                          *
