@@ -32,6 +32,9 @@ module.exports = {
 
     return res.redirect('/pin');
   },
+
+  
+
   
   register: function (req, res) {
 

@@ -1,20 +1,23 @@
 
-	Hello, <%= user.firstName %>, <%= user.lastName %>
-	<%= user.age %>
-	<%= user.phoneNumber %>
-	<%= user.gender %>
-	<%= user.nationality %>
-	<%= user.pin %>
-	<%= user.barCode %>
-	<%= user.id %>
+Hello, <%= user.firstName %>, <%= user.lastName %>
+<%= user.age %>
+<%= user.phoneNumber %>
+<%= user.gender %>
+<%= user.nationality %>
+<%= user.pin %>
+<%= user.barCode %>
+<%= user.id %>
 
 
-	<img src="/user/avatar/<%= user.id %>">
-	<%= user.lastName %>
+<img src="/user/avatar/<%= user.id %>">
+<form  id ="forms" action="/documents" method="post"  enctype="multipart/form-data">
+	<div><input type="file" name="Document" id="updateDom" value="Add Documents"></div>
+</form>
 
 
 
-<script type="text/javascript">
-	
 
-</script>
+
+
+
+
